@@ -29,7 +29,11 @@ import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
+
+
 public class AlarmTweetService extends IntentService {
+	private final static String UNIQUE_ID = "YOONSHIK: ";
+
 	public AlarmTweetService() {
 		super("AlarmTweetService");
 	}
@@ -101,7 +105,7 @@ public class AlarmTweetService extends IntentService {
 		protected Boolean doInBackground(String... params) {
 
 			try {
-				return postTweet(params[0]);
+				return postTweet(UNIQUE_ID + params[0]);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
